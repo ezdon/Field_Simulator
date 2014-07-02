@@ -3,10 +3,10 @@ from animal_class import *
 class Cow(Animal):
     """A Sheep animal"""
     
-    def __init__(self, name):
+    def __init__(self):
         super().__init__(2,4,5)
         self._type = "Cow"
-        self._name = name
+        self._name = ""
 
 
     def grow(self,food,water):
