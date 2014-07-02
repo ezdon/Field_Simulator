@@ -47,11 +47,11 @@ class AnimalWindow(QMainWindow):
 
     def create_view_animal_layout(self,animal_type):
         #second layout of the window - view the crop growth
-        self.weight_label = QLabel("Weight")
+        self.grow_label = QLabel("Weight")
         self.days_label = QLabel("Days Growing")
         self.status_label = QLabel("Animal Status")
 
-        self.weight_line_edit = QLineEdit()
+        self.grow_line_edit = QLineEdit()
         self.days_line_edit = QLineEdit()
         self.status_line_edit = QLineEdit()
 
@@ -73,12 +73,12 @@ class AnimalWindow(QMainWindow):
         self.status_grid = QGridLayout()
 
         #add label widgets to the status layout
-        self.status_grid.addWidget(self.growth_label,0,0)
+        self.status_grid.addWidget(self.grow_label,0,0)
         self.status_grid.addWidget(self.days_label,1,0)
         self.status_grid.addWidget(self.status_label,2,0)
 
         #add line edit widgets to the status layout
-        self.status_grid.addWidget(self.growth_line_edit,0,1)
+        self.status_grid.addWidget(self.grow_line_edit,0,1)
         self.status_grid.addWidget(self.days_line_edit,1,1)
         self.status_grid.addWidget(self.status_line_edit,2,1)
 
@@ -113,14 +113,14 @@ class AnimalWindow(QMainWindow):
             food = random.randint(1,10)
             water = random.randint(1,10)
             self.simulated_animal.grow(food,water)
-        self.update_animal_view_status()
+##        self.update_animal_view_status()
 
     def manually_grow_animal(self):
         manual_values_dialog = ManualGrowDialog()
         manual_values_dialog.exec_()
         food, water = manual_values_dialog.values()
         self.simulated_animal.grow(food,water)
-        self.update_animal_view_status()
+##        self.update_animal_view_status()
 
         
 ##    def update_animal_view_status(self):
